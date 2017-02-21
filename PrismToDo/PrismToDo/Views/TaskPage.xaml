@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismToDo.Views.TaskPage"
+             Title="{Binding TitlePage}">
+  <StackLayout>
+    <StackLayout x:Name="task" Padding="10,10,15,15">
+      <Label Text="Title" Style="{StaticResource baseStyle}"/>
+      <Entry Text="{Binding Task.Title}"/>
+      <Label Text="Description" Style="{StaticResource baseStyle}"/>
+      <Entry Text="{Binding Task.Description}"/>
+      <Label Text="Date" Style="{StaticResource baseStyle}"/>
+      <DatePicker Date="{Binding Task.Date}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+      <Button Text="Save" Command="{Binding ListViewModel.SaveTaskCommand}" CommandParameter="{Binding}" />
+      <Button Text="Delete" Command="{Binding ListViewModel.DeleteTaskCommand}" CommandParameter="{Binding}" />      
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

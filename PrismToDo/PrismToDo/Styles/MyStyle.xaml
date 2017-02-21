@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="clr-namespace:PrismToDo.Converters;assembly=PrismToDo"
+                    x:Class="PrismToDo.Styles.MyStyle">
+  <Style TargetType ="Button">
+    <Setter Property="BackgroundColor" Value="#4169E1" />
+    <Setter Property="FontFamily" Value="Arial" />
+  </Style>
+  <Style  TargetType ="DatePicker">
+    <Setter Property="Format" Value="dd.MM.yyyy" />
+    <Setter Property="MinimumDate" Value="{x:Static sys:DateTime.Today}" />
+  </Style>
+  <Style x:Key="baseStyle" TargetType="Label">
+    <Setter Property="FontFamily" Value="Arial" />
+    <Setter Property="VerticalTextAlignment" Value="Center" />
+    <Setter Property="TextColor" Value="#4169E1" />
+  </Style> 
+  <Style TargetType="Entry">
+    <Setter Property="FontFamily" Value="Arial" />
+  </Style>
+  <c:DateTimeToLocalDateConverter x:Key="DateTimeToLocalDateConverter" />
+</ResourceDictionary>
